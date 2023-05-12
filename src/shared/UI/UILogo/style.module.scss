@@ -1,0 +1,10 @@
+.logo {
+  &:hover,
+  &:visited {
+    color: "black";
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
