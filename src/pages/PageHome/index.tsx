@@ -1,12 +1,5 @@
-import UI from "@/shared/UI";
-
 const PageHome: React.FC = () => {
-  return (
-    <div>
-      {/* <UI.Carousel /> */}
-      <UI.Figure />
-    </div>
-  );
+  return <div>PageHome</div>;
 };
 
 export default PageHome;
