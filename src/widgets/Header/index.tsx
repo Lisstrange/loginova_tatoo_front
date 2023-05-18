@@ -5,9 +5,13 @@ import styles from "./index.module.scss";
 
 const Header: React.FC = () => {
   return (
-    <header className={styles.header}>
-      <div className={styles.logo}>MyPortfolio</div>
-      <UI.Burger />
+    <header>
+      <div className="container">
+        <div className={styles.wrapper}>
+          <div className={styles.logo}>MyPortfolio</div>
+          <UI.Burger />
+        </div>
+      </div>
     </header>
   );
 };
