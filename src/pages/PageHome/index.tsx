@@ -4,7 +4,7 @@ const PageHome: React.FC = () => {
   return (
     <div className="container">
       PageHome
-      <UI.Figure />
+      <UI.Carousel />
     </div>
   );
 };
