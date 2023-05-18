@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import Filter from "@/shared/UI/UIFilter";
-import CardItem from "@/shared/UI/UICardItem";
 
 const PageWorks: React.FC = () => {
   return (
@@ -20,13 +18,10 @@ const PageWorks: React.FC = () => {
             блок с приветствием и т.п.
             <div>А тут краткое описание под приветствием</div>
           </div>
-          <Filter />
         </nav>
         <div>
           WorkPage
-          <div>
-            <CardItem />
-          </div>
+          <div></div>
         </div>
       </body>
     </html>

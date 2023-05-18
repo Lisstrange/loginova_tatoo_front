@@ -16,10 +16,8 @@ const UIBurger: React.FC<IUIBurgerProps> = ({ className }) => {
       onClick={() => setToggle(!toggle)}
     >
       <svg
-        className={styles.burger}
+        className={clsx(styles.burger, styles.svg)}
         version="1.1"
-        height="100"
-        width="100"
         viewBox="0 0 100 100"
       >
         <path className={clsx(styles.line, styles.line1)} d="M 30,65 H 70" />
@@ -33,10 +31,8 @@ const UIBurger: React.FC<IUIBurgerProps> = ({ className }) => {
         />
       </svg>
       <svg
-        className={styles.x}
+        className={clsx(styles.x, styles.svg)}
         version="1.1"
-        height="100"
-        width="100"
         viewBox="0 0 100 100"
       >
         <path className={styles.line} d="M 34,32 L 66,68" />

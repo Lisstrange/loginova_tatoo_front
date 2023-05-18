@@ -1,5 +1,10 @@
-:root {
-  --bg-color: white;
+@import "../mixins/getKVFromSCSSMaps";
+@import "global.colors";
+@import "global.sizes";
+@import "global.text";
 
-  --primary-text-color: #0d1e2d;
+:root {
+  @include get-KeyValue-from-SCSS-Maps($global-colors);
+  @include get-KeyValue-from-SCSS-Maps($global-sizes);
+  @include get-KeyValue-from-SCSS-Maps($global-text);
 }

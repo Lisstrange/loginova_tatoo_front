@@ -1,8 +1,9 @@
 @import "lib/reset";
 @import url("fonts.css");
+@import "variables/global.scss";
 
 * {
-  font-family: "MyFonts";
+  font-family: var(--font--family-main);
 }
 
 .container {

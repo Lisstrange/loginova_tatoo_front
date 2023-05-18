@@ -8,7 +8,7 @@ const Header: React.FC = () => {
     <header>
       <div className="container">
         <div className={styles.wrapper}>
-          <div className={styles.logo}>MyPortfolio</div>
+          <UI.Logo />
           <UI.Burger />
         </div>
       </div>

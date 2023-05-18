@@ -1,13 +1,9 @@
-svg {
-  height: 80px;
+$size: 70px;
+
+.svg {
+  height: $size;
   position: absolute;
-  width: 80px;
-}
-.plates {
-  display: flex;
-  flex-wrap: wrap;
-  max-height: 160px;
-  width: 640px;
+  width: $size;
 }
 @media (max-width: 640px) {
   .plates {
@@ -16,8 +12,8 @@ svg {
 }
 .plate {
   cursor: pointer;
-  height: 80px;
-  width: 80px;
+  height: $size;
+  width: $size;
 }
 .burger {
   filter: url(#gooeyness);
