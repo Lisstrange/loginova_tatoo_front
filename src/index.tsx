@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import AppRouter from "./app/router/AppRouter";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./shared/assets/styles/main.scss";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

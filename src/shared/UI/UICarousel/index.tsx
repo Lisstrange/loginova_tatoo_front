@@ -1,52 +1,55 @@
 import React from "react";
-import Carousel from "react-bootstrap/Carousel";
+import { Settings as CarouselSettings } from 'react-slick';
+import Slider, {Settings} from 'react-slick';
 
-function UICarousel() {
-  const [index, setIndex] = React.useState<number>(0);
+import styles from "./index.module.scss";
+import { render } from "@testing-library/react";
 
-  const handleSelect = (
-    selectedIndex: number,
-    e: Record<string, unknown> | null
-  ) => {
-    setIndex(selectedIndex);
-    console.log(selectedIndex);
-  };
+export type UICarouselPageType = {};
 
-  return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item>
-        <img className="d-block w-100" src="img/lyffi.jpg" alt="First slide" />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="img/logo512.png"
-          alt="Second slide"
-        />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
-          alt="Third slide"
-        />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
-  );
+interface IUICarouselProps {
+  pages: Array<UICarouselPageType>;
 }
 
-export default UICarousel;
+interface SliderSettings {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 320,
+      settings: { slidesToShow: 1, slidesToScroll: 1, infinite: true }
+    },
+    {
+      breakpoint: 768,
+      settings: { slidesToShow: 2, slidesToScroll: 2, infinite: true }
+    },
+    {
+      breakpoint: 1024,
+      settings: { slidesToShow: 3, slidesToScroll: 3, infinite: true }
+    }
+  ]
+};
+
+const UICarousel2: React.FC<IUICarouselProps> = () => {
+  render() {
+    console.log('slider render');
+    return (
+    <Slider {...this.props.settings}></Slider>
+    )};
+};
+
+const UICarousel: React.FC<IUICarouselProps> = () => {
+  return (
+    <div className={styles.root}>
+      <div className={styles.window}>
+        <div className={styles.item}></div>
+      </div>
+    </div>
+  );
+};
+
+export default 1;
