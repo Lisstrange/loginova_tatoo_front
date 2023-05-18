@@ -9,9 +9,7 @@ interface IProjectListProps {}
 
 const ProjectList: React.FC<IProjectListProps> = () => {
   const [posts, setPosts] = React.useState<Array<Post>>([]);
-  const [categories, setCategories] = React.useState<
-    Array<keyof typeof CategoryEnum>
-  >([]);
+  const [categories, setCategories] = React.useState<Array<CategoryEnum>>([]);
 
   React.useEffect(() => {
     $api
@@ -31,7 +29,7 @@ const ProjectList: React.FC<IProjectListProps> = () => {
             Freelance Creative & Professional Graphics Designer
           </p>
         </div>
-        <ProjectListFilter />
+        <ProjectListFilter categories={categories} />
       </div>
     </div>
   );

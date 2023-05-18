@@ -1,10 +1,11 @@
 import React from "react";
 import clsx from "clsx";
+import { CategoryEnum } from "@/entities/posts/types";
 
 import styles from "./index.module.scss";
 
 interface IProjectListFilterProps {
-  categories: Array<string>;
+  categories: Array<CategoryEnum>;
 }
 
 const ProjectListFilter: React.FC<IProjectListFilterProps> = ({
