@@ -1,3 +1,4 @@
 import Burger from "./UIBurger";
+import SimpleSlider from "./UISlider";
 
-export default { Burger };
+export default { Burger, SimpleSlider };
