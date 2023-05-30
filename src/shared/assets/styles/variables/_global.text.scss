@@ -1,5 +1,8 @@
 $global-text: (
-  --font--family-main: "MyFonts",
+  --font--family-main: (
+    "Montserrat",
+    sans-serif,
+  ),
   // --------- text-s ↴ ----------
   --font-size-s: 10px,
   --font-line-s: 18px,
