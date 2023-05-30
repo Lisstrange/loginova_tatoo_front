@@ -3,8 +3,8 @@
 @import "lib/reset";
 @import "variables/global.scss";
 
-* {
-  font-family: var(--font--family-main);
+body {
+  font: var(--font-m);
 }
 
 .container {
