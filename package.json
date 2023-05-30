@@ -11,8 +11,7 @@
     "@types/node": "^16.18.25",
     "@types/react": "^18.2.5",
     "@types/react-dom": "^18.2.3",
-    "axios": "^1.4.0",
-    "clsx": "^1.2.1",
+    "bootstrap": "^5.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1",
@@ -22,12 +21,16 @@
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "craco-alias": "^3.0.1",
+    "create-file-cli-test": "^0.0.1",
+    "sass": "^1.62.1"
+  },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject",
-    "server": "json-server ./mockdb.json -p 7000"
+    "eject": "craco eject"
   },
   "eslintConfig": {
     "extends": [
@@ -48,8 +51,6 @@
     ]
   },
   "devDependencies": {
-    "@types/react-slick": "^0.23.10",
-    "craco-alias": "^3.0.1",
-    "sass": "^1.62.1"
+    "craco-alias": "^3.0.1"
   }
 }

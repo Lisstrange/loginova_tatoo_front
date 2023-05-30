@@ -11,7 +11,7 @@ import { Outlet, Link } from "react-router-dom";
 const MainLayout: React.FC = () => {
   return (
     <>
-      {/* <header>
+      <header>
         Header
         <nav>
           <Link to={HOME_ROUTE}>Home</Link>
@@ -20,7 +20,7 @@ const MainLayout: React.FC = () => {
           <Link to={CONTACTS_ROUTE}>Contacts</Link>
           <Link to={WORKS_ROUTE}>Works</Link>
         </nav>
-      </header> */}
+      </header>
 
       <Header />
       <main>

@@ -1,4 +1,9 @@
+import { Logo } from "@/shared/UI/UILogo";
+import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import cl from "classnames";
+import Filter from "@/shared/UI/UIFilter";
+import CardItem from "@/shared/UI/UICardItem";
 
 const PageWorks: React.FC = () => {
   return (
@@ -14,14 +19,21 @@ const PageWorks: React.FC = () => {
         </header>
         <Link to="https://reactjs.org/">Моё</Link> портфолио
         <nav>
-          <div>
-            блок с приветствием и т.п.
-            <div>А тут краткое описание под приветствием</div>
-          </div>
+          <Container>
+            <div>
+              блок с приветствием и т.п.
+              <div>А тут краткое описание под приветствием</div>
+            </div>
+            <Filter />
+          </Container>
         </nav>
         <div>
-          WorkPage
-          <div></div>
+          <section className={cl()}>
+            WorkPage
+            <div>
+              <CardItem />
+            </div>
+          </section>
         </div>
       </body>
     </html>
