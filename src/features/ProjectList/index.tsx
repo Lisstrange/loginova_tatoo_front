@@ -33,13 +33,11 @@ const ProjectList: React.FC<IProjectListProps> = () => {
       </div>
       <div className={styles.body}>
         {posts.map((data) => (
-          <div key={data.id} className={styles.post}>
-            <ProjectItem
-              key={data.id}
-              data={data}
-              className={styles.projectItem}
-            />
-          </div>
+          <ProjectItem
+            key={data.id}
+            data={data}
+            className={styles.projectItem}
+          />
         ))}
       </div>
     </div>
