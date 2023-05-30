@@ -11,15 +11,18 @@ import { Outlet, Link } from "react-router-dom";
 const MainLayout: React.FC = () => {
   return (
     <>
-      {/* <nav>
+      <header>
+        Header
+        <nav>
           <Link to={HOME_ROUTE}>Home</Link>
           <Link to={ABOUT_ROUTE}>About</Link>
           <Link to={SERVICES_ROUTE}>Services</Link>
           <Link to={CONTACTS_ROUTE}>Contacts</Link>
           <Link to={WORKS_ROUTE}>Works</Link>
-        </nav> */}
-      <Header />
+        </nav>
+      </header>
 
+      <Header />
       <main>
         <Outlet />
       </main>

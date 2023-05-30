@@ -1,92 +1,55 @@
 import React from "react";
+import Carousel from "react-bootstrap/Carousel";
 
-import styles from "./index.module.scss";
-import clsx from "clsx";
+function UICarousel() {
+  const [index, setIndex] = React.useState<number>(0);
 
-export type UICarouselPageType = {};
+  const handleSelect = (
+    selectedIndex: number,
+    e: Record<string, unknown> | null
+  ) => {
+    setIndex(selectedIndex);
+    console.log(selectedIndex);
+  };
 
-interface IUICarouselProps {
-  pages: Array<UICarouselPageType>;
-}
+interface ISimpleSliderProps {}
 
-const syncedSecondary = true;
-const UICarousel: React.FC<IUICarouselProps> = () => {
-  const [count, setCount] = React.useState<number>(1);
-  const [current, setCurrent] = React.useState<number>(
-    Math.round(el.item.index - el.item.count / 2 - 0.5)
-  );
-
-  if(current < 0) {
-    current = count;
-  }
-  if(current > count) {
-    current = 0;
-  }
-
-  React.useEffect(() => {}, []);
-
-  sync1
-    .owlCarousel({
-      items: 1,
-      slideSpeed: 2000,
-      nav: true,
-      autoplay: true,
-      dots: true,
-      loop: true,
-      responsiveRefreshRate: 200,
-      navText: [
-        '<svg width="100%" height="100%" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>',
-        '<svg width="100%" height="100%" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>',
-      ],
-    })
-    .on("changed.owl.carousel", syncPosition);
-
+const SimpleSlider: React.FC<ISimpleSliderProps> = () => {
   return (
-    <div className={styles.root}>
-      <svg width="100%" height="100%" viewBox="0 0 11 20">
-        <path
-          fill="none"
-          strokeWidth="1px"
-          stroke="#000"
-          d="M9.554,1.001l-8.607,8.607l8.607,8.606"
+    <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel.Item>
+        <img className="d-block w-100" src="img/lyffi.jpg" alt="First slide" />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="img/logo512.png"
+          alt="Second slide"
         />
-      </svg>
-      <div className={clsx(styles.sync, styles.owlCarousel, styles.owlTheme)}>
-        <div className="item">
-          <h1>1</h1>
-        </div>
-        <div className="item">
-          <h1>2</h1>
-        </div>
-        <div className="item">
-          <h1>3</h1>
-        </div>
-        <div className="item">
-          <h1>4</h1>
-        </div>
-        <div className="item">
-          <h1>5</h1>
-        </div>
-        <div className="item">
-          <h1>6</h1>
-        </div>
-        <div className="item">
-          <h1>7</h1>
-        </div>
-        <div className="item">
-          <h1>8</h1>
-        </div>
-      </div>
-      <svg width="100%" height="100%" viewBox="0 0 11 20" version="1.1">
-        <path
-          fill="none"
-          strokeWidth="1px"
-          stroke="#000"
-          d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="holder.js/800x400?text=Third slide&bg=20232a"
+          alt="Third slide"
         />
-      </svg>
-    </div>
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
   );
 };
 
-export default UICarousel;
+export default SimpleSlider;

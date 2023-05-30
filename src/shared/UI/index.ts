@@ -1,3 +1,5 @@
-import Burger from "./UIBurger";
+import { Logo } from "./UILogo/index";
+import Carousel from "./UICarousel";
+import Figure from "./UIFigure";
 
-export default { Burger };
+export default { Carousel, Figure, Logo };
