@@ -4,7 +4,7 @@ export enum CategoryEnum {
   Branding = "branding",
 }
 
-export type Post = {
+export type ProjectItemType = {
   id: number;
   photo: string;
   title: string;

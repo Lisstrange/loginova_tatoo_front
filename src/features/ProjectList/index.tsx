@@ -1,23 +1,23 @@
 import React from "react";
-import type { CategoryEnum, Post } from "@/entities/posts/types";
+import type { CategoryEnum, ProjectItemType } from "@/entities/posts/types";
 import ProjectListFilter from "./ProjectListFilter";
 import $api from "@/shared/config/http";
 
 import styles from "./index.module.scss";
+import ProjectItem from "./ProgectItem";
 
 interface IProjectListProps {}
 
 const ProjectList: React.FC<IProjectListProps> = () => {
-  const [posts, setPosts] = React.useState<Array<Post>>([]);
+  const [posts, setPosts] = React.useState<Array<ProjectItemType>>([]);
   const [categories, setCategories] = React.useState<Array<CategoryEnum>>([]);
 
   React.useEffect(() => {
-    $api
-      .get<Array<Post>>("/posts")
-      .then((response) => {
-        setPosts(response.data);
-      })
-      .then(() => setCategories(() => posts.map(({ category }) => category)));
+    console.log("Отрисовка");
+    $api.get<Array<ProjectItemType>>("/posts").then((response) => {
+      setPosts(response.data);
+      setCategories(() => response.data.map(({ category }) => category));
+    });
   }, []);
 
   return (
@@ -30,6 +30,17 @@ const ProjectList: React.FC<IProjectListProps> = () => {
           </p>
         </div>
         <ProjectListFilter categories={categories} />
+      </div>
+      <div className={styles.body}>
+        {posts.map((data) => (
+          <div key={data.id} className={styles.post}>
+            <ProjectItem
+              key={data.id}
+              data={data}
+              className={styles.projectItem}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
