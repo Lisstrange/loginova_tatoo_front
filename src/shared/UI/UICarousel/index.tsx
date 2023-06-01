@@ -1,54 +1,103 @@
 import React from "react";
-import Carousel from "react-bootstrap/Carousel";
+import Slider from "react-slick";
 
-function UICarousel() {
-  const [index, setIndex] = React.useState<number>(0);
+import styles from "./index.module.scss";
 
-  const handleSelect = (
-    selectedIndex: number,
-    e: Record<string, unknown> | null
-  ) => {
-    setIndex(selectedIndex);
-    console.log(selectedIndex);
-  };
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 320,
+      settings: { slidesToShow: 1, slidesToScroll: 1, infinite: true },
+    },
+    {
+      breakpoint: 768,
+      settings: { slidesToShow: 2, slidesToScroll: 2, infinite: true },
+    },
+    {
+      breakpoint: 1024,
+      settings: { slidesToShow: 3, slidesToScroll: 3, infinite: true },
+    },
+  ],
+};
 
 interface ISimpleSliderProps {}
 
 const SimpleSlider: React.FC<ISimpleSliderProps> = () => {
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item>
-        <img className="d-block w-100" src="img/lyffi.jpg" alt="First slide" />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="img/logo512.png"
-          alt="Second slide"
-        />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
-          alt="Third slide"
-        />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
+    <Slider {...settings}>
+      <div>
+        <div className={styles.card}>
+          <h4>Card 1 Title</h4>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
+            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
+            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
           </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+        </div>
+      </div>
+      <div>
+        <div className={styles.card}>
+          <h4>Card 2 Title</h4>
+          <p>
+            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div className={styles.card}>
+          <h4>Card 3 Title</h4>
+          <p>
+            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div className={styles.card}>
+          <h4>Card 4 Title</h4>
+          <p>
+            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div className={styles.card}>
+          <h4>Card 5 Title</h4>
+          <p>
+            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div className={styles.card}>
+          <h4>Card 6 Title</h4>
+          <p>
+            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div className={styles.card}>
+          <h4>Card 7 Title</h4>
+          <p>
+            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div className={styles.card}>
+          <h4>Card 8 Title</h4>
+          <p>
+            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
+          </p>
+        </div>
+      </div>
+    </Slider>
   );
 };
 
