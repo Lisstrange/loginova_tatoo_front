@@ -1,8 +1,10 @@
 import React from "react";
-import Slider from "react-slick";
+import Carousel from "react-bootstrap/Carousel";
 
-import styles from "./index.module.scss";
+function UICarousel() {
+  const [index, setIndex] = React.useState<number>(0);
 
+<<<<<<< HEAD
 const settings = {
   dots: true,
   infinite: true,
@@ -25,79 +27,53 @@ const settings = {
     },
   ],
 };
+=======
+  const handleSelect = (
+    selectedIndex: number,
+    e: Record<string, unknown> | null
+  ) => {
+    setIndex(selectedIndex);
+    console.log(selectedIndex);
+  };
+>>>>>>> f051a979ca698bc356cd37eb52431f4c924211ef
 
 interface ISimpleSliderProps {}
 
 const SimpleSlider: React.FC<ISimpleSliderProps> = () => {
   return (
-    <Slider {...settings}>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 1 Title</h4>
+    <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel.Item>
+        <img className="d-block w-100" src="img/lyffi.jpg" alt="First slide" />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="img/logo512.png"
+          alt="Second slide"
+        />
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="holder.js/800x400?text=Third slide&bg=20232a"
+          alt="Third slide"
+        />
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
           <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
-        </div>
-      </div>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 2 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
-        </div>
-      </div>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 3 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
-        </div>
-      </div>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 4 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
-        </div>
-      </div>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 5 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
-        </div>
-      </div>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 6 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
-        </div>
-      </div>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 7 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
-        </div>
-      </div>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 8 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
-        </div>
-      </div>
-    </Slider>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
   );
 };
 

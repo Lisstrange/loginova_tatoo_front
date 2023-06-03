@@ -11,7 +11,6 @@ const AppRouter: React.FC = () => {
       <Routes>
         <Route path={HOME_ROUTE} element={<MainLayout />}>
           <Route index element={<PageHome />} />
-
           {publicRoutes.map(({ path, Component }, i) => (
             <Route key={i} path={path} element={<Component />} />
           ))}

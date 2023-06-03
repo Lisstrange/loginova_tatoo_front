@@ -1,9 +1,9 @@
 import React from "react";
 
 import UI from "@/shared/UI";
-import ProjectList from "@/features/ProjectList";
 
 import styles from "./index.module.scss";
+import ProjectList from "@/features/ProjectList";
 
 const PageHome: React.FC = () => {
   return (
