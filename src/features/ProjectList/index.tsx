@@ -1,27 +1,25 @@
 import React from "react";
-
-import { CategoryEnum, ProjectItemType } from "@/entities/posts/types";
+import type { CategoryEnum, ProjectItemType } from "@/entities/posts/types";
 import ProjectListFilter from "./ProjectListFilter";
 import $api from "@/shared/config/http";
 
 import styles from "./index.module.scss";
-import ProjectItem from "./ProjectItem";
+import ProjectItem from "./ProgectItem";
 
-const ProjectList: React.FC = () => {
+interface IProjectListProps {}
+
+const ProjectList: React.FC<IProjectListProps> = () => {
   const [posts, setPosts] = React.useState<Array<ProjectItemType>>([]);
   const [categories, setCategories] = React.useState<Array<CategoryEnum>>([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [error, setError] = React.useState("");
 
   React.useEffect(() => {
-    $api
-      .get<Array<ProjectItemType>>("/posts")
-      .then((response) => {
-        setPosts(response.data);
-        setCategories(() => response.data.map(({ category }) => category));
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setIsLoading(false));
+    console.log("Отрисовка");
+    $api.get<Array<ProjectItemType>>("/posts").then((response) => {
+      setPosts(response.data);
+      setCategories(() => response.data.map(({ category }) => category));
+    });
   }, []);
 
   console.log(posts);
@@ -47,9 +45,9 @@ const ProjectList: React.FC = () => {
       <div className={styles.body}>
         {posts.map((data) => (
           <ProjectItem
-            className={styles.projectItem}
             key={data.id}
             data={data}
+            className={styles.projectItem}
           />
         ))}
       </div>

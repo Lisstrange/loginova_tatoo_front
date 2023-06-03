@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap");
+
 @import "lib/reset";
-@import url("fonts.css");
 @import "variables/global.scss";
 
-* {
-  font-family: var(--font--family-main);
+body {
+  font: var(--font-m);
 }
 
 .container {

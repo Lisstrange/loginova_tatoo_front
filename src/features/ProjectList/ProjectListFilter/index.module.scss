@@ -1,0 +1,14 @@
+.root {
+  justify-content: space-between;
+}
+
+.categoryName {
+  padding: 0%;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
