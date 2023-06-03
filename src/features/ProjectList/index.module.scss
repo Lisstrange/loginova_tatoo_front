@@ -10,11 +10,3 @@
   justify-content: space-between;
   align-items: center;
 }
-.body {
-  display: flex;
-  flex-wrap: wrap;
-
-  .projectItem {
-    width: calc(100% / 3);
-  }
-}

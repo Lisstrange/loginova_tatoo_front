@@ -2,9 +2,9 @@ import React from "react";
 import type { CategoryEnum, ProjectItemType } from "@/entities/posts/types";
 import ProjectListFilter from "./ProjectListFilter";
 import $api from "@/shared/config/http";
+import ProjectItem from "./ProjectItem";
 
 import styles from "./index.module.scss";
-import ProjectItem from "./ProgectItem";
 
 interface IProjectListProps {}
 
@@ -14,8 +14,13 @@ const ProjectList: React.FC<IProjectListProps> = () => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [error, setError] = React.useState("");
 
+  const [selectedCategoryName, setSelectedCategoryName] = React.useState<
+    "All" | CategoryEnum | string
+  >("All");
+  const [filtredPosts, setFiltredPosts] =
+    React.useState<ProjectItemType[]>(posts);
+
   React.useEffect(() => {
-    console.log("Отрисовка");
     $api
       .get<Array<ProjectItemType>>("/posts")
       .then((response) => {
@@ -25,6 +30,18 @@ const ProjectList: React.FC<IProjectListProps> = () => {
       })
       .catch((e) => setError(e.message));
   }, []);
+
+  React.useEffect(() => {
+    setFiltredPosts(() => {
+      if (selectedCategoryName === "All") {
+        return [...posts];
+      }
+
+      return [
+        ...posts.filter((item) => item.category === selectedCategoryName),
+      ];
+    });
+  }, [posts, selectedCategoryName]);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -42,10 +59,15 @@ const ProjectList: React.FC<IProjectListProps> = () => {
             Freelance Creative & Professional Graphics Designer
           </p>
         </div>
-        <ProjectListFilter categories={categories} />
+        <ProjectListFilter
+          selectedCategory={(categoryName) =>
+            setSelectedCategoryName(categoryName)
+          }
+          categories={categories}
+        />
       </div>
       <div className={styles.body}>
-        {posts.map((data) => (
+        {filtredPosts.map((data) => (
           <ProjectItem
             key={data.id}
             data={data}
