@@ -16,13 +16,15 @@ const ProjectList: React.FC<IProjectListProps> = () => {
 
   React.useEffect(() => {
     console.log("Отрисовка");
-    $api.get<Array<ProjectItemType>>("/posts").then((response) => {
-      setPosts(response.data);
-      setCategories(() => response.data.map(({ category }) => category));
-    });
+    $api
+      .get<Array<ProjectItemType>>("/posts")
+      .then((response) => {
+        setPosts(response.data);
+        setCategories(() => response.data.map(({ category }) => category));
+        setIsLoading(false);
+      })
+      .catch((e) => setError(e.message));
   }, []);
-
-  console.log(posts);
 
   if (isLoading) {
     return <div>Loading...</div>;

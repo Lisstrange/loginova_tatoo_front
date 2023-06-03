@@ -11,12 +11,17 @@ interface IProjectListFilterProps {
 const ProjectListFilter: React.FC<IProjectListFilterProps> = ({
   categories,
 }) => {
+  const [uniqCategories, setUniqCategories] = React.useState<string[]>();
   const [selectedCategoryName, setSelectedCategoryName] =
     React.useState<string>(categories[0]);
 
+  React.useEffect(() => {
+    setUniqCategories(() => Array.from(new Set(categories).values()));
+  }, [categories]);
+
   return (
     <div className={styles.root}>
-      {categories?.map((name, i) => (
+      {uniqCategories?.map((name, i) => (
         <button
           onClick={() => setSelectedCategoryName(name)}
           className={clsx(
