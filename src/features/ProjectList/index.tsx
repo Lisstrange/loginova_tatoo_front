@@ -1,9 +1,9 @@
 import React from "react";
-import type { CategoryEnum, ProjectItemType } from "@/entities/posts/types";
+import type { ProjectItemType } from "@/entities/posts/types";
+import { CategoryEnum } from "@/entities/posts/types";
 import ProjectListFilter from "./ProjectListFilter";
 import $api from "@/shared/config/http";
 import ProjectItem from "./ProjectItem";
-
 import styles from "./index.module.scss";
 
 interface IProjectListProps {}
@@ -14,9 +14,8 @@ const ProjectList: React.FC<IProjectListProps> = () => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [error, setError] = React.useState("");
 
-  const [selectedCategoryName, setSelectedCategoryName] = React.useState<
-    "All" | CategoryEnum | string
-  >("All");
+  const [selectedCategoryName, setSelectedCategoryName] =
+    React.useState<CategoryEnum>(CategoryEnum.All);
   const [filtredPosts, setFiltredPosts] =
     React.useState<ProjectItemType[]>(posts);
 
@@ -33,7 +32,7 @@ const ProjectList: React.FC<IProjectListProps> = () => {
 
   React.useEffect(() => {
     setFiltredPosts(() => {
-      if (selectedCategoryName === "All") {
+      if (selectedCategoryName === CategoryEnum.All) {
         return [...posts];
       }
 
@@ -60,7 +59,7 @@ const ProjectList: React.FC<IProjectListProps> = () => {
           </p>
         </div>
         <ProjectListFilter
-          selectedCategory={(categoryName) =>
+          selectedCategory={(categoryName: CategoryEnum) =>
             setSelectedCategoryName(categoryName)
           }
           categories={categories}

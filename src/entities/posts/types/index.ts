@@ -1,4 +1,5 @@
 export enum CategoryEnum {
+  All = "All",
   Design = "design",
   Photography = "photography",
   Branding = "branding",

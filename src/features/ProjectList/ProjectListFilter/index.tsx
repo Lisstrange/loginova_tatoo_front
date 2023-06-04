@@ -1,24 +1,23 @@
 import React from "react";
 import clsx from "clsx";
 import { CategoryEnum } from "@/entities/posts/types";
-
 import styles from "./index.module.scss";
 
 interface IProjectListFilterProps {
   categories: Array<CategoryEnum>;
-  selectedCategory: (categoryName: string) => void;
+  selectedCategory: (categoryName: CategoryEnum) => void;
 }
 
 const ProjectListFilter: React.FC<IProjectListFilterProps> = ({
   categories,
   selectedCategory,
 }) => {
-  const [uniqCategories, setUniqCategories] = React.useState<
-    string[] | CategoryEnum[]
-  >(["All"]);
+  const [uniqCategories, setUniqCategories] = React.useState<CategoryEnum[]>([
+    CategoryEnum.All,
+  ]);
 
   const [selectedCategoryName, setSelectedCategoryName] =
-    React.useState<string>(uniqCategories[0]);
+    React.useState<CategoryEnum>(uniqCategories[0]);
 
   React.useEffect(() => {
     setUniqCategories((prev) => [
@@ -28,7 +27,7 @@ const ProjectListFilter: React.FC<IProjectListFilterProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onClickHandler = (name: string) => {
+  const onClickHandler = (name: CategoryEnum) => {
     selectedCategory(name);
     setSelectedCategoryName(name);
   };
