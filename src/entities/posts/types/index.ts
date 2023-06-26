@@ -12,3 +12,9 @@ export type ProjectItemType = {
   category: CategoryEnum;
   descripton: string;
 };
+
+export type FeedbackItemType = {
+  id: number;
+  title: string;
+  text: string;
+};
