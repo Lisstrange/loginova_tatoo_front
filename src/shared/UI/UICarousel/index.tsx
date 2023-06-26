@@ -1,7 +1,9 @@
 import React from "react";
 import Slider from "react-slick";
-
+import $api from "@/shared/config/http";
 import styles from "./index.module.scss";
+
+import type { FeedbackItemType } from "@/entities/posts/types";
 
 const settings = {
   dots: true,
@@ -29,74 +31,34 @@ const settings = {
 interface ISimpleSliderProps {}
 
 const SimpleSlider: React.FC<ISimpleSliderProps> = () => {
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [feedback, setFeedback] = React.useState<Array<FeedbackItemType>>([]);
+  const [error, setError] = React.useState("");
+
+  React.useEffect(() => {
+    $api
+      .get<Array<FeedbackItemType>>("/feedback")
+      .then((response) => {
+        console.log("start to fill feedback");
+        console.log(feedback);
+        console.log(response.data);
+        setFeedback(response.data);
+        console.log(feedback);
+        setIsLoading(false);
+      })
+      .catch((e) => setError(e.message));
+  }, []);
+
   return (
     <Slider {...settings}>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 1 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
+      {feedback.map((data) => (
+        <div>
+          <div className={styles.card}>
+            <h4>data.title</h4>
+            <p>data.text</p>
+          </div>
         </div>
-      </div>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 2 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
-        </div>
-      </div>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 3 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
-        </div>
-      </div>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 4 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
-        </div>
-      </div>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 5 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
-        </div>
-      </div>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 6 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
-        </div>
-      </div>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 7 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
-        </div>
-      </div>
-      <div>
-        <div className={styles.card}>
-          <h4>Card 8 Title</h4>
-          <p>
-            Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.
-          </p>
-        </div>
-      </div>
+      ))}
     </Slider>
   );
 };
