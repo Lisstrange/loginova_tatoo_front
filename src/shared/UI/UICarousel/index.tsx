@@ -39,11 +39,7 @@ const SimpleSlider: React.FC<ISimpleSliderProps> = () => {
     $api
       .get<Array<FeedbackItemType>>("/feedback")
       .then((response) => {
-        console.log("start to fill feedback");
-        console.log(feedback);
-        console.log(response.data);
         setFeedback(response.data);
-        console.log(feedback);
         setIsLoading(false);
       })
       .catch((e) => setError(e.message));
@@ -52,10 +48,10 @@ const SimpleSlider: React.FC<ISimpleSliderProps> = () => {
   return (
     <Slider {...settings}>
       {feedback.map((data) => (
-        <div>
+        <div key={data.id}>
           <div className={styles.card}>
-            <h4>data.title</h4>
-            <p>data.text</p>
+            <h4>{data.title}</h4>
+            <p>{data.text}</p>
           </div>
         </div>
       ))}
