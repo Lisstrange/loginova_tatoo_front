@@ -10,6 +10,7 @@ const Header: React.FC = () => {
         <div className={styles.wrapper}>
           <UI.Logo />
           <UI.Burger />
+          <UI.Navbar />
         </div>
       </div>
     </header>

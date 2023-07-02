@@ -14,23 +14,28 @@ import type { Pathname } from "react-router-dom";
 interface AppRoute {
   path: Pathname;
   Component: React.FC;
+  alias: string;
 }
 
 export const publicRoutes: Array<AppRoute> = [
   {
     path: ABOUT_ROUTE,
     Component: PageAbout,
+    alias: "Обо мне",
   },
   {
     path: CONTACTS_ROUTE,
     Component: PageContacts,
+    alias: "Связаться со мной",
   },
   {
     path: SERVICES_ROUTE,
     Component: PageServices,
+    alias: "Услуги",
   },
   {
     path: WORKS_ROUTE,
     Component: PageWorks,
+    alias: "Мои работы",
   },
 ];
