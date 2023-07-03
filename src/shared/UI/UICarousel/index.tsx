@@ -12,6 +12,7 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
+  // className: styles.slider,
   responsive: [
     {
       breakpoint: 320,

@@ -5,15 +5,19 @@ import styles from "./index.module.scss";
 
 interface IUIBurgerProps {
   className?: string;
+  onClick?: () => void;
 }
 
-const UIBurger: React.FC<IUIBurgerProps> = ({ className }) => {
+const UIBurger: React.FC<IUIBurgerProps> = ({ className, onClick }) => {
   const [toggle, setToggle] = React.useState<boolean>(false);
 
   return (
     <div
       className={clsx(styles.plate, toggle && styles.active, className)}
-      onClick={() => setToggle(!toggle)}
+      onClick={() => {
+        setToggle(!toggle);
+        onClick?.();
+      }}
     >
       <svg
         className={clsx(styles.burger, styles.svg)}
