@@ -1,24 +1,35 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { publicRoutes } from "./utils";
-import { HOME_ROUTE } from "@/shared/routes/public-routes.utils";
-import MainLayout from "@/processes/layouts/MainLayout";
-import PageHome from "@/pages/PageHome";
+import { Routes, Route } from "react-router-dom";
+import { authRouteConfig, publicRouteConfig } from "./config";
 
-const AppRouter: React.FC = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={HOME_ROUTE} element={<MainLayout />}>
-          <Route index element={<PageHome />} />
-
-          {publicRoutes.map(({ path, Component }, i) => (
-            <Route key={i} path={path} element={<Component />} />
-          ))}
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-};
+const AppRouter: React.FC = () => (
+  <Routes>
+    {/*  isAuth |  */}
+    {/*         |  */}
+    {/*        \|/ */}
+    {Object.values(authRouteConfig).map(({ path, element }) => (
+      <Route
+        key={path}
+        path={path}
+        element={
+          <React.Suspense fallback={<div>Loading</div>}>
+            <div className="page-wrapper">{element}</div>
+          </React.Suspense>
+        }
+      />
+    ))}
+    {Object.values(publicRouteConfig).map(({ path, element }) => (
+      <Route
+        key={path}
+        path={path}
+        element={
+          <React.Suspense fallback={<div>Loading</div>}>
+            {element}
+          </React.Suspense>
+        }
+      />
+    ))}
+  </Routes>
+);
 
 export default AppRouter;

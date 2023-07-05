@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap");
-
-@import "lib/reset";
+@import url("lib/reset.css");
+@import url("config/fonts.css");
 @import "variables/global.scss";
+@import "variables/img.scss";
 
-body {
-  font: var(--font-m);
+* {
+  font-family: "Open Sans", sans-serif;
 }
 
 .container {
-  width: 80%;
+  width: var(--container--width);
   margin: 0 auto;
 }
