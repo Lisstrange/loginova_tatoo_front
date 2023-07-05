@@ -24,7 +24,6 @@ const ProjectListFilter: React.FC<IProjectListFilterProps> = ({
       ...prev,
       ...Array.from(new Set(categories).values()),
     ]);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onClickHandler = (name: CategoryEnum) => {

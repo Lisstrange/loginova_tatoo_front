@@ -6,16 +6,14 @@ import styles from "./index.module.scss";
 interface IUIBurgerProps {
   className?: string;
   onClick?: () => void;
+  active: boolean;
 }
 
-const UIBurger: React.FC<IUIBurgerProps> = ({ className, onClick }) => {
-  const [toggle, setToggle] = React.useState<boolean>(false);
-
+const UIBurger: React.FC<IUIBurgerProps> = ({ className, onClick, active }) => {
   return (
     <div
-      className={clsx(styles.plate, toggle && styles.active, className)}
+      className={clsx(styles.plate, active && styles.active, className)}
       onClick={() => {
-        setToggle(!toggle);
         onClick?.();
       }}
     >
