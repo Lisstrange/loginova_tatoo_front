@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+}
+
+.categoryName {
+  cursor: pointer;
+  padding: 0%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+
+  font: var(--font-m);
+  font-weight: 500;
+
+  &:hover {
+    border-bottom: 1px solid black;
+  }
+}
+
+.categoryName.active {
+  border-bottom: 1px solid black;
+}

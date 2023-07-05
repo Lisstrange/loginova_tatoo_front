@@ -1,20 +1,30 @@
-import { RouteProps, Navigate } from "react-router-dom";
+import { RouteProps } from "react-router-dom";
 import { PublicRoutesEnum, publicRoutePaths } from "@/shared/config/routes";
-import SigninPage from "@/pages/SigninPage";
-import SignupPage from "@/pages/SignupPage";
-// import NotFoundPage from "@/pages/NotFoundPage"; // TODO
+import HomePage from "@/pages/HomePage";
+import AboutPage from "@/pages/AboutPage";
+import ContactsPage from "@/pages/ContactsPage";
+import ServicesPage from "@/pages/ServicesPage";
+import WorksPage from "@/pages/WorksPage";
 
 export const publicRouteConfig: Record<PublicRoutesEnum, RouteProps> = {
-  [PublicRoutesEnum.SIGNIN]: {
-    path: publicRoutePaths.signin,
-    element: <SigninPage />,
+  [PublicRoutesEnum.HOME]: {
+    index: true,
+    element: <HomePage />,
   },
-  [PublicRoutesEnum.SIGNUP]: {
-    path: publicRoutePaths.signup,
-    element: <SignupPage />,
+  [PublicRoutesEnum.ABOUT_ROUTE]: {
+    path: publicRoutePaths.about,
+    element: <AboutPage />,
   },
-  [PublicRoutesEnum.NOT_FOUND]: {
-    path: publicRoutePaths.not_found,
-    element: <Navigate to={publicRoutePaths.signin} replace />,
+  [PublicRoutesEnum.CONTACTS_ROUTE]: {
+    path: publicRoutePaths.contacts,
+    element: <ContactsPage />,
+  },
+  [PublicRoutesEnum.SERVICES_ROUTE]: {
+    path: publicRoutePaths.services,
+    element: <ServicesPage />,
+  },
+  [PublicRoutesEnum.WORKS_ROUTE]: {
+    path: publicRoutePaths.works,
+    element: <WorksPage />,
   },
 };

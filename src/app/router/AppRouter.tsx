@@ -1,34 +1,25 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { authRouteConfig, publicRouteConfig } from "./config";
+import { publicRouteConfig } from "./config";
+import { publicRoutePaths } from "@/shared/config/routes";
+import MainLayout from "@/processes/layouts/MainLayout/UI/MainLayout";
 
 const AppRouter: React.FC = () => (
   <Routes>
-    {/*  isAuth |  */}
-    {/*         |  */}
-    {/*        \|/ */}
-    {Object.values(authRouteConfig).map(({ path, element }) => (
-      <Route
-        key={path}
-        path={path}
-        element={
-          <React.Suspense fallback={<div>Loading</div>}>
-            <div className="page-wrapper">{element}</div>
-          </React.Suspense>
-        }
-      />
-    ))}
-    {Object.values(publicRouteConfig).map(({ path, element }) => (
-      <Route
-        key={path}
-        path={path}
-        element={
-          <React.Suspense fallback={<div>Loading</div>}>
-            {element}
-          </React.Suspense>
-        }
-      />
-    ))}
+    <Route path={publicRoutePaths.home} element={<MainLayout />}>
+      {Object.values(publicRouteConfig).map(({ path, element, index }) => (
+        <Route
+          key={path}
+          index={index}
+          path={path}
+          element={
+            <React.Suspense fallback={<div>Loading</div>}>
+              {element}
+            </React.Suspense>
+          }
+        />
+      ))}
+    </Route>
   </Routes>
 );
 

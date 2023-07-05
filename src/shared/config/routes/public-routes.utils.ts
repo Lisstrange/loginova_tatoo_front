@@ -1,11 +1,15 @@
 export enum PublicRoutesEnum {
-  SIGNIN = "signin",
-  SIGNUP = "signup",
-  NOT_FOUND = "not_found",
+  HOME = "home",
+  ABOUT_ROUTE = "about",
+  WORKS_ROUTE = "works",
+  CONTACTS_ROUTE = "contacts",
+  SERVICES_ROUTE = "services",
 }
 
 export const publicRoutePaths: Record<PublicRoutesEnum, string> = {
-  [PublicRoutesEnum.SIGNIN]: "/signin",
-  [PublicRoutesEnum.SIGNUP]: "/signup",
-  [PublicRoutesEnum.NOT_FOUND]: "*",
+  [PublicRoutesEnum.HOME]: "/",
+  [PublicRoutesEnum.ABOUT_ROUTE]: "/about",
+  [PublicRoutesEnum.WORKS_ROUTE]: "/works",
+  [PublicRoutesEnum.CONTACTS_ROUTE]: "/contacts",
+  [PublicRoutesEnum.SERVICES_ROUTE]: "/services",
 };
