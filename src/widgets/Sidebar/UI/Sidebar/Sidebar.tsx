@@ -19,13 +19,13 @@ export const Sidebar: React.FC<ISidebarProps> = () => {
     <nav className={clsx(styles.nav, toggle && styles.expanded)}>
       <UI.Burger onClick={() => setToggle(!toggle)} active={toggle} />
       <ul className={styles.navItems}>
-        {sidebarLinks.map(({ path, alias, icon }, i) => (
+        {sidebarLinks.map(({ path, alias, Icon }, i) => (
           <div
             key={i}
             className={styles.itemWrapper}
             onClick={NavLinkClickHandler}
           >
-            icon
+            <Icon />
             <NavLink
               className={({ isActive }) =>
                 clsx(styles.navLink, isActive && styles.navLinkActive)

@@ -10,28 +10,28 @@ import Telegram from "../icons/telegram.svg";
 type SidebarLinks = {
   path: Pathname;
   alias: string;
-  icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  Icon: React.FC<React.SVGProps<SVGSVGElement>>;
 };
 
 export const sidebarLinks: SidebarLinks[] = [
   {
     path: publicRoutePaths.about,
     alias: "Обо мне",
-    icon:  UserIcon,
+    Icon: UserIcon,
   },
   {
     path: publicRoutePaths.contacts,
     alias: "Связаться со мной",
-    icon:  Telegram,
+    Icon: Telegram,
   },
   {
     path: publicRoutePaths.services,
     alias: "Услуги",
-    icon:  CheckList,
+    Icon: CheckList,
   },
   {
     path: publicRoutePaths.works,
     alias: "Мои работы",
-    icon:  Gallery,
+    Icon: Gallery,
   },
 ];
