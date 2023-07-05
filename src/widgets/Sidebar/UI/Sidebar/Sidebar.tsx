@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 
 import UI from "@/shared/UI";
 import { sidebarLinks } from "../../utils/sidebar-links";
-import UserIcon from "../../icons/user.svg";
 import styles from "./Sidebar.module.scss";
 
 interface ISidebarProps {}
