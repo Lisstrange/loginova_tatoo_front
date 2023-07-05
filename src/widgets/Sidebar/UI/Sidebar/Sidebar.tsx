@@ -25,13 +25,13 @@ export const Sidebar: React.FC<ISidebarProps> = () => {
             className={styles.itemWrapper}
             onClick={NavLinkClickHandler}
           >
-            <Icon />
             <NavLink
               className={({ isActive }) =>
                 clsx(styles.navLink, isActive && styles.navLinkActive)
               }
               to={path}
             >
+              <Icon className={styles.icon} />
               {alias}
             </NavLink>
           </div>

@@ -15,6 +15,11 @@ $hamburgerPosition: calc(
 $transTime: 300ms;
 $navTransTime: 400ms;
 
+.icon {
+  min-width: $navbarWidth;
+  height: calc($navbarWidth / 2);
+}
+
 .nav {
   position: fixed;
   z-index: 99;
@@ -78,6 +83,8 @@ $navTransTime: 400ms;
 }
 
 .navLink {
+  display: flex;
+  align-items: center;
   color: black;
   &:hover {
     color: $hoverColor;
