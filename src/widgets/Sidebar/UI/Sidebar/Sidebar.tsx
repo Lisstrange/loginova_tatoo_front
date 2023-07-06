@@ -8,34 +8,50 @@ import styles from "./Sidebar.module.scss";
 
 interface ISidebarProps {}
 
-export const Sidebar: React.FC<ISidebarProps> = () => {
+const Sidebar: React.FC<ISidebarProps> = () => {
   const [toggle, setToggle] = useState(false);
 
   const NavLinkClickHandler = () => {
     setToggle(false);
   };
+
+  let mySidebar: HTMLElement | null = document.getElementById("sidebar");
+
+  function handleClickOutside(event: MouseEvent) {
+    if (mySidebar && !mySidebar.contains(event.target as Node)) {
+      console.log("Клик вне области объекта");
+      NavLinkClickHandler();
+    }
+  }
+
+  document.addEventListener("click", handleClickOutside);
+
   return (
-    <nav className={clsx(styles.nav, toggle && styles.expanded)}>
-      <UI.Burger onClick={() => setToggle(!toggle)} active={toggle} />
-      <ul className={styles.navItems}>
-        {sidebarLinks.map(({ path, alias, Icon }, i) => (
-          <div
-            key={i}
-            className={styles.itemWrapper}
-            onClick={NavLinkClickHandler}
-          >
-            <NavLink
-              className={({ isActive }) =>
-                clsx(styles.navLink, isActive && styles.navLinkActive)
-              }
-              to={path}
+    <div id="sidebar">
+      <nav className={clsx(styles.nav, toggle && styles.expanded)}>
+        <UI.Burger onClick={() => setToggle(!toggle)} active={toggle} />
+        <ul className={styles.navItems}>
+          {sidebarLinks.map(({ path, alias, Icon }, i) => (
+            <div
+              key={i}
+              className={styles.itemWrapper}
+              onClick={NavLinkClickHandler}
             >
-              <Icon className={styles.icon} />
-              {alias}
-            </NavLink>
-          </div>
-        ))}
-      </ul>
-    </nav>
+              <NavLink
+                className={({ isActive }) =>
+                  clsx(styles.navLink, isActive && styles.navLinkActive)
+                }
+                to={path}
+              >
+                <Icon className={styles.icon} />
+                {alias}
+              </NavLink>
+            </div>
+          ))}
+        </ul>
+      </nav>
+    </div>
   );
 };
+
+export { Sidebar };
