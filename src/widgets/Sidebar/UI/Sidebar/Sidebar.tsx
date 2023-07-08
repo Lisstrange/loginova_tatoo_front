@@ -6,13 +6,16 @@ import UI from "@/shared/UI";
 import { sidebarLinks } from "../../utils/sidebar-links";
 import styles from "./Sidebar.module.scss";
 
-interface ISidebarProps {}
+interface ISidebarProps {
+  childToParent: (childStatus: boolean) => void;
+}
 
-const Sidebar: React.FC<ISidebarProps> = () => {
+const Sidebar: React.FC<ISidebarProps> = ({ childToParent }) => {
   const [toggle, setToggle] = useState(false);
 
   const NavLinkClickHandler = () => {
     setToggle(false);
+    childToParent(false);
   };
 
   let mySidebar: HTMLElement | null = document.getElementById("sidebar");
@@ -27,15 +30,18 @@ const Sidebar: React.FC<ISidebarProps> = () => {
   document.addEventListener("click", handleClickOutside);
 
   return (
-    <div id="sidebar">
+    <div id="sidebar" className={styles.sidebar}>
       <nav className={clsx(styles.nav, toggle && styles.expanded)}>
-        <UI.Burger onClick={() => setToggle(!toggle)} active={toggle} />
+        <UI.Burger
+          onClick={() => (setToggle(!toggle), childToParent(!toggle))}
+          active={toggle}
+        />
         <ul className={styles.navItems}>
           {sidebarLinks.map(({ path, alias, Icon }, i) => (
             <div
               key={i}
               className={styles.itemWrapper}
-              onClick={NavLinkClickHandler}
+              onClick={() => NavLinkClickHandler()}
             >
               <NavLink
                 className={({ isActive }) =>
