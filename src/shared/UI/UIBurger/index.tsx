@@ -1,11 +1,11 @@
-import React from "react";
+import React, { MouseEvent } from "react";
 import clsx from "clsx";
 
 import styles from "./index.module.scss";
 
 interface IUIBurgerProps {
   className?: string;
-  onClick?: () => void;
+  onClick?: (e: MouseEvent<HTMLDivElement>) => void;
   active: boolean;
 }
 
@@ -13,8 +13,8 @@ const UIBurger: React.FC<IUIBurgerProps> = ({ className, onClick, active }) => {
   return (
     <div
       className={clsx(styles.plate, active && styles.active, className)}
-      onClick={() => {
-        onClick?.();
+      onClick={(e) => {
+        onClick?.(e);
       }}
     >
       <svg

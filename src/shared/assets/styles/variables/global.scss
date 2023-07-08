@@ -1,9 +1,11 @@
 @import "../mixins/getKVFromSCSSMaps";
+@import "global.z-index";
 @import "global.colors";
 @import "global.sizes";
 @import "global.text";
 
 :root {
+  @include get-KeyValue-from-SCSS-Maps($global-z-index);
   @include get-KeyValue-from-SCSS-Maps($global-colors);
   @include get-KeyValue-from-SCSS-Maps($global-sizes);
   @include get-KeyValue-from-SCSS-Maps($global-text);

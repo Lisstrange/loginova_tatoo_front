@@ -20,6 +20,33 @@ $navTransTime: 400ms;
   height: calc($navbarWidth / 2);
 }
 
+.sidebar {
+  position: relative;
+}
+
+.layout {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: var(--sidebar-layout-z-index);
+
+  transition: opacity 0.4s;
+  background-color: black;
+  opacity: 0;
+}
+.layout.entering {
+  display: block;
+}
+.layout.entered {
+  opacity: 0.4;
+}
+.layout.exiting {
+  opacity: 0;
+}
+.layout.exited {
+  display: none;
+}
+
 .nav {
   position: fixed;
   z-index: 99;

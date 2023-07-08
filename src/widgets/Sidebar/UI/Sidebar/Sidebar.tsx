@@ -1,63 +1,60 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { NavLink } from "react-router-dom";
+import { Transition } from "react-transition-group";
 
 import UI from "@/shared/UI";
 import { sidebarLinks } from "../../utils/sidebar-links";
 import styles from "./Sidebar.module.scss";
 
-interface ISidebarProps {
-  childToParent: (childStatus: boolean) => void;
-}
+interface ISidebarProps {}
 
-const Sidebar: React.FC<ISidebarProps> = ({ childToParent }) => {
+export const Sidebar: React.FC<ISidebarProps> = () => {
   const [toggle, setToggle] = useState(false);
+  const nodeRef = useRef(null);
+  const layoutRef = useRef<HTMLDivElement>(null);
 
-  const NavLinkClickHandler = () => {
+  const onClose = () => {
     setToggle(false);
-    childToParent(false);
   };
 
-  let mySidebar: HTMLElement | null = document.getElementById("sidebar");
-
-  function handleClickOutside(event: MouseEvent) {
-    if (mySidebar && !mySidebar.contains(event.target as Node)) {
-      console.log("Клик вне области объекта");
-      NavLinkClickHandler();
+  useEffect(() => {
+    if (toggle) {
+      layoutRef.current.addEventListener("click", onClose);
     }
-  }
-
-  document.addEventListener("click", handleClickOutside);
+  }, [toggle]);
 
   return (
-    <div id="sidebar" className={styles.sidebar}>
-      <nav className={clsx(styles.nav, toggle && styles.expanded)}>
-        <UI.Burger
-          onClick={() => (setToggle(!toggle), childToParent(!toggle))}
-          active={toggle}
-        />
-        <ul className={styles.navItems}>
-          {sidebarLinks.map(({ path, alias, Icon }, i) => (
-            <div
-              key={i}
-              className={styles.itemWrapper}
-              onClick={() => NavLinkClickHandler()}
-            >
-              <NavLink
-                className={({ isActive }) =>
-                  clsx(styles.navLink, isActive && styles.navLinkActive)
-                }
-                to={path}
-              >
-                <Icon className={styles.icon} />
-                {alias}
-              </NavLink>
-            </div>
-          ))}
-        </ul>
-      </nav>
-    </div>
+    <Transition nodeRef={nodeRef} in={toggle} timeout={100}>
+      {(state) => (
+        <div ref={nodeRef} className={styles.sidebar}>
+          <div ref={layoutRef} className={clsx(styles.layout, styles[state])} />
+          <nav className={clsx(styles.nav, toggle && styles.expanded)}>
+            <UI.Burger
+              onClick={(e) => {
+                e.preventDefault();
+                setToggle(!toggle);
+              }}
+              active={toggle}
+            />
+            <ul className={styles.navItems}>
+              {sidebarLinks.map(({ path, alias, Icon }, i) => (
+                <div key={i} className={styles.itemWrapper} onClick={onClose}>
+                  <NavLink
+                    className={({ isActive }) =>
+                      clsx(styles.navLink, isActive && styles.navLinkActive)
+                    }
+                    to={path}
+                  >
+                    <Icon className={styles.icon} />
+                    {alias}
+                  </NavLink>
+                </div>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      )}
+    </Transition>
   );
 };
-
-export { Sidebar };

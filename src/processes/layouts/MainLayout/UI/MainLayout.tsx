@@ -11,21 +11,11 @@ interface MainLayoutProps {
 }
 
 const MainLayout: React.FC<MainLayoutProps> = (className) => {
-  const [active, setActive] = useState(false);
-  const childToParent = (childStatus: boolean) => {
-    setActive(childStatus);
-  };
   return (
     <>
       <main className={styles.main}>
-        <Sidebar childToParent={childToParent} />
-        <div
-          className={clsx(
-            styles.pageWrapper,
-            { active } && styles.pageWrapperBackground
-            // className
-          )}
-        >
+        <Sidebar />
+        <div className={clsx(styles.pageWrapper)}>
           <Header />
           <Outlet />
         </div>
