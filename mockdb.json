@@ -46,25 +46,25 @@
   "feedback": [
     {
       "id": 1,
-      "photo": "src/widgets/Sidebar/icons/user.svg",
+      "photo": "https://bootstrapmade.com/demo/templates/MyPortfolio/assets/img/img_1.jpg",
       "title": "Card 1 Title",
       "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah. Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah. Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah."
     },
     {
       "id": 2,
-      "photo": "src/widgets/Sidebar/icons/user.svg",
+      "photo": "src/shared/UI/UICarousel/images/Capybara.jpg",
       "title": "Card 2 Title",
       "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah."
     },
     {
       "id": 3,
-      "photo": "src/widgets/Sidebar/icons/user.svg",
+      "photo": "/images/Capybara.jpg",
       "title": "Card 3 Title",
       "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah."
     },
     {
       "id": 4,
-      "photo": "src/widgets/Sidebar/icons/user.svg",
+      "photo": "images/Capybara.jpg",
       "title": "Card 4 Title",
       "text": "LoLorem ipsum dolor eget etat blah lorem ipsum dolor eget etat "
     },

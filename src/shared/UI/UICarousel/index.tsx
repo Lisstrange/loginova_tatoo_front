@@ -50,7 +50,11 @@ const SimpleSlider: React.FC<ISimpleSliderProps> = () => {
       {feedback.map((data) => (
         <div key={data.id}>
           <div className={styles.card}>
-            {data.photo}
+            <img
+              className={styles.img}
+              src={data.photo}
+              alt={"Это картинка автора коммнетария =)" + data.photo}
+            />
 
             <h4>{data.title}</h4>
             <p>{data.text}</p>
