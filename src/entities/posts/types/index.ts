@@ -15,6 +15,7 @@ export type ProjectItemType = {
 
 export type FeedbackItemType = {
   id: number;
+  photo: string;
   title: string;
   text: string;
 };

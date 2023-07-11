@@ -12,7 +12,6 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
-  // className: styles.slider,
   responsive: [
     {
       breakpoint: 320,
@@ -51,6 +50,8 @@ const SimpleSlider: React.FC<ISimpleSliderProps> = () => {
       {feedback.map((data) => (
         <div key={data.id}>
           <div className={styles.card}>
+            {data.photo}
+
             <h4>{data.title}</h4>
             <p>{data.text}</p>
           </div>
