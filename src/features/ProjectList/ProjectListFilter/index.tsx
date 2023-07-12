@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { CategoryEnum } from "@/entities/posts/types";
+import { CategoryEnum } from "@/entities/projects/model/types";
 import styles from "./index.module.scss";
 
 interface IProjectListFilterProps {

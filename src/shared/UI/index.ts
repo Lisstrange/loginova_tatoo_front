@@ -1,5 +1,8 @@
-import Carousel from "./UICarousel";
+import {
+  UICarousel as Carousel,
+  UICarouselCard as CarouselCard,
+} from "./UICarousel";
 import Burger from "./UIBurger";
 import Logo from "./UILogo";
 
-export default { Carousel, Burger, Logo };
+export default { Carousel, CarouselCard, Burger, Logo };

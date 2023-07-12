@@ -2,6 +2,7 @@ import React from "react";
 
 import UI from "@/shared/UI";
 import ProjectList from "@/features/ProjectList";
+import { FeedbackSlider } from "@/features/FeedbackSlider";
 
 import styles from "./HomePage.module.scss";
 
@@ -10,7 +11,7 @@ const HomePage: React.FC = () => {
     <div className={styles.root}>
       <div className="container">
         <ProjectList />
-        <UI.Carousel />
+        <FeedbackSlider />
       </div>
     </div>
   );

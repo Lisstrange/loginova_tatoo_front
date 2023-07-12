@@ -1,13 +1,13 @@
 import React from "react";
 import clsx from "clsx";
 
-import type { ProjectItemType } from "@/entities/posts/types";
+import type { Project } from "@/entities/projects/model/types";
 
 import styles from "./index.module.scss";
 
 interface IProjectItemProps {
   className?: string;
-  data: ProjectItemType;
+  data: Project;
 }
 
 const ProjectItem: React.FC<IProjectItemProps> = ({ className, data }) => {
