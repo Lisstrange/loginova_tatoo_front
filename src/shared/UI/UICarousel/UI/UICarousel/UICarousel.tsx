@@ -1,9 +1,9 @@
 import React from "react";
-import Slider from "react-slick";
+import Slider, { Settings } from "react-slick";
 
 import styles from "./UICarousel.module.scss";
 
-const settings = {
+const settings: Settings = {
   dots: true,
   infinite: true,
   speed: 500,
@@ -31,7 +31,5 @@ interface IUICarouselProps {
 }
 
 export const UICarousel: React.FC<IUICarouselProps> = ({ children }) => (
-  <Slider className={styles.slider} {...settings}>
-    {children}
-  </Slider>
+  <Slider className={styles.slider} children={children} {...settings} />
 );

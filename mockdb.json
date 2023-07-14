@@ -46,43 +46,43 @@
   "feedback": [
     {
       "id": 1,
-      "photo": "https://bootstrapmade.com/demo/templates/MyPortfolio/assets/img/img_1.jpg",
+      "photo": "http://localhost:3000/img/Capybara.jpg",
       "title": "Card 1 Title",
       "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah. Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah. Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah."
     },
     {
       "id": 2,
-      "photo": "src/shared/UI/UICarousel/images/Capybara.jpg",
+      "photo": "http://localhost:3000/img/Capybara.jpg",
       "title": "Card 2 Title",
       "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah."
     },
     {
       "id": 3,
-      "photo": "/images/Capybara.jpg",
+      "photo": "http://localhost:3000/img/Capybara.jpg",
       "title": "Card 3 Title",
       "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah."
     },
     {
       "id": 4,
-      "photo": "images/Capybara.jpg",
+      "photo": "http://localhost:3000/img/Capybara.jpg",
       "title": "Card 4 Title",
       "text": "LoLorem ipsum dolor eget etat blah lorem ipsum dolor eget etat "
     },
     {
       "id": 5,
-      "photo": "src/widgets/Sidebar/icons/user.svg",
+      "photo": "http://localhost:3000/img/Capybara.jpg",
       "title": "Card 5 Title",
       "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah "
     },
     {
       "id": 6,
-      "photo": "src/widgets/Sidebar/icons/user.svg",
+      "photo": "http://localhost:3000/img/Capybara.jpg",
       "title": "Card 6 Title",
       "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah "
     },
     {
       "id": 7,
-      "photo": "src/widgets/Sidebar/icons/user.svg",
+      "photo": "http://localhost:3000/img/Capybara.jpg",
       "title": "Card 7 Title",
       "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah. "
     }
