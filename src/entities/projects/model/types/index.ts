@@ -18,4 +18,5 @@ export type Feedback = {
   photo: string;
   title: string;
   text: string;
+  author: string;
 };

@@ -46,45 +46,52 @@
   "feedback": [
     {
       "id": 1,
-      "photo": "http://localhost:3000/img/Capybara.jpg",
+      "photo": "https://bootstrapmade.com/demo/templates/MyPortfolio/assets/img/img_1.jpg",
       "title": "Card 1 Title",
-      "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah. Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah. Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah."
+      "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah. Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah. Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.",
+      "author": "Nikita"
     },
     {
       "id": 2,
       "photo": "http://localhost:3000/img/Capybara.jpg",
       "title": "Card 2 Title",
-      "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah."
+      "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.",
+      "author": "Nikita"
     },
     {
       "id": 3,
       "photo": "http://localhost:3000/img/Capybara.jpg",
       "title": "Card 3 Title",
-      "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah."
+      "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.",
+      "author": "Nikita"
     },
     {
       "id": 4,
       "photo": "http://localhost:3000/img/Capybara.jpg",
       "title": "Card 4 Title",
-      "text": "LoLorem ipsum dolor eget etat blah lorem ipsum dolor eget etat "
+      "text": "LoLorem ipsum dolor eget etat blah lorem ipsum dolor eget etat ",
+      "author": "Nikita"
     },
     {
       "id": 5,
       "photo": "http://localhost:3000/img/Capybara.jpg",
       "title": "Card 5 Title",
-      "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah "
+      "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah ",
+      "author": "Nikita"
     },
     {
       "id": 6,
       "photo": "http://localhost:3000/img/Capybara.jpg",
       "title": "Card 6 Title",
-      "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah "
+      "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah ",
+      "author": "Nikita"
     },
     {
       "id": 7,
       "photo": "http://localhost:3000/img/Capybara.jpg",
       "title": "Card 7 Title",
-      "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah. "
+      "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah. ",
+      "author": "Nikita"
     }
   ]
 }
