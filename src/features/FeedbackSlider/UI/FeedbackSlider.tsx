@@ -59,7 +59,7 @@ export const FeedbackSlider: React.FC = ({}) => {
             <div className={styles.textWrapper}>
               <h4>{data.title || "TITLE"}</h4>
               <p>{data.text || "TEXT"}</p>
-              <p>{data.author || "AUTHOR"}</p>
+              <h5>{data.author || "AUTHOR"}</h5>
             </div>
           </div>
         ))}

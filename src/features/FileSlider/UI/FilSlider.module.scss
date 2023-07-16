@@ -1,0 +1,8 @@
+.filecard {
+  width: 100%;
+  height: 100%;
+  display: block;
+  height: var(--cards-height-m);
+  width: var(--cards-width-m);
+  object-fit: scale-down;
+}

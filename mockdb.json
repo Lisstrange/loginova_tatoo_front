@@ -1,4 +1,8 @@
 {
+  "files_about_me": [
+    "http://localhost:3000/video/IMG_6333.MOV",
+    "http://localhost:3000/img/Capybara.jpg"
+  ],
   "posts": [
     {
       "id": 1,
@@ -49,7 +53,7 @@
       "photo": "https://bootstrapmade.com/demo/templates/MyPortfolio/assets/img/img_1.jpg",
       "title": "Card 1 Title",
       "text": "Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah. Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah. Lorem ipsum dolor eget etat blah lorem ipsum dolor eget etat blah.",
-      "author": "Nikita"
+      "author": "Nikitaaaaaaaaaaaaaaaaaaaaaaa"
     },
     {
       "id": 2,

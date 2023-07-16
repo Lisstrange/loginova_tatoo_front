@@ -1,5 +1,16 @@
 import React from "react";
+import styles from "./AboutPage.module.scss";
 
-const AboutPage: React.FC = () => <div>AboutPage</div>;
+import { FileSlider } from "@/features/FileSlider";
+
+const AboutPage: React.FC = () => {
+  return (
+    <div className={styles.root}>
+      <div className="container">
+        <FileSlider />
+      </div>
+    </div>
+  );
+};
 
 export default AboutPage;
