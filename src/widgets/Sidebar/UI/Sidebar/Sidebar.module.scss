@@ -4,8 +4,8 @@ $darkGrey: rgb(71, 71, 71);
 $hoverBackgroundColor: rgba(71, 71, 71, 0.05);
 //$hoverColor: rgb(255, 112, 122);
 $hoverColor: #428aff;
-$navbarExpandedWidth: 230px;
-$navbarWidth: 80px;
+$navbarExpandedWidth: var(--navbarExpandedWidth);
+$navbarWidth: var(--navbarWidth);
 $navbarHeight: 50px;
 $hamburgerWidth: 22px;
 $hamburgerPadding: 10px;
@@ -207,41 +207,6 @@ $navTransTime: 400ms;
     // height: 100%;
     width: 100%;
   }
-
-  //   .hamburger-menu {
-  //     display: none;
-  //   }
-
-  //   .hamburger-mobile {
-  //     cursor: pointer;
-  //     position: fixed;
-  //     padding: $hamburgerPadding;
-  //     top: 8;
-  //     left: 0;
-  //     z-index: 999;
-  //     transition: transform;
-  //     transition-duration: 300ms;
-  //     transition-timing-function: cubic-bezier(0.7, 0, 0, 0.7);
-  //     display: block;
-  //   }
-
-  //   .hamburger-mobile:hover > .icon-bar {
-  //     background-color: $hoverColor;
-  //   }
-
-  //   .hamburger-mobile:not(.collapsed) .icon-bar:nth-child(1) {
-  //     transform: translateY(6px) rotate(-45deg);
-  //   }
-
-  //   .hamburger-mobile:not(.collapsed) .icon-bar:nth-child(2) {
-  //     opacity: 0;
-  //     transform: translateX(-10px);
-  //   }
-
-  //   .hamburger-mobile:not(.collapsed) .icon-bar:nth-child(3) {
-  //     transform: translateY(-6px) rotate(45deg);
-  //   }
-  //   /* ./Hamburger */
 
   .expanded-mobile {
     height: 100%;
