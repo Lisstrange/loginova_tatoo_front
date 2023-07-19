@@ -1,10 +1,8 @@
-container {
-  padding-top: 70px;
-}
 .memes {
   flex-grow: 2;
 }
 .fileslider {
+  padding-top: 70px;
   display: flex;
 }
 .slider {
@@ -13,4 +11,35 @@ container {
 
 .fileslider {
   column-gap: 20px;
+}
+
+.technics {
+  font: var(--font-m);
+  font-weight: 500;
+}
+
+ul,
+li {
+  font: var(--font-l);
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+ul {
+  margin: 2em 0;
+}
+
+li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+li:before {
+  content: "\f006";
+  font-family: "FontAwesome";
+  float: left;
+  margin-left: -1.5em;
+  color: #0074d9;
 }
