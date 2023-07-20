@@ -1,6 +1,14 @@
 import React from "react";
 import styles from "./AboutPage.module.scss";
 
+
+import { Pathname } from "react-router-dom";
+
+import { publicRoutePaths } from "@/shared/config/routes";
+
+import SneakerIcon from "../icons/sneaker1.svg";
+
+
 import { FileSlider } from "@/features/FileSlider";
 
 const AboutPage: React.FC = () => {
@@ -41,7 +49,10 @@ const AboutPage: React.FC = () => {
         <div className={styles.technics}>
           Чем я занимаюсь:
           <ul className={styles.technic_aspect}>
-            <li>- Тату в стиле реализм</li>
+            <li>
+              <SneakerIcon/>
+              - Тату в стиле реализм
+              </li>
             <li>- Кастом одежды и обуви</li>
             <li>- Реставрация аксессуаров</li>
             <li>- Проектирование ландшафтного дизайна</li>
