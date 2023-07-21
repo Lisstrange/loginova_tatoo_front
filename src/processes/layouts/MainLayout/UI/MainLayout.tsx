@@ -1,10 +1,10 @@
-import Header from "@/widgets/Header";
-import { Sidebar } from "@/widgets/Sidebar";
+import clsx from "clsx";
 import { Outlet } from "react-router-dom";
 
+import Header from "@/widgets/Header";
+import { Sidebar } from "@/widgets/Sidebar";
+
 import styles from "./MainLayout.module.scss";
-import clsx from "clsx";
-import { useState } from "react";
 
 interface MainLayoutProps {
   className?: string;
