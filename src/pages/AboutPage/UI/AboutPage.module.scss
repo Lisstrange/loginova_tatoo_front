@@ -1,14 +1,12 @@
-.fileslider {
+.main_div {
   padding-top: 70px;
   display: flex;
+  column-gap: 20px;
 }
 .slider {
   width: 50%;
 }
 
-.fileslider {
-  column-gap: 20px;
-}
 
 .technics {
   font: var(--font-m);
@@ -17,6 +15,7 @@
 
 ul,
 li {
+  align-items: center;
   font: var(--font-l);
   font-weight: 500;
   padding: 0;

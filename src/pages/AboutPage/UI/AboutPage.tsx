@@ -14,11 +14,35 @@ import { FileSlider } from "@/features/FileSlider";
 const AboutPage: React.FC = () => {
   return (
     <div className="container">
-      <div className={styles.fileslider}>
+      <div className={styles.main_div}>
         <div className={styles.slider}>
           <FileSlider />
+        </div>
 
-          <div>
+        <div className={styles.technics}>
+          Чем я занимаюсь:
+          <ul className={styles.technic_aspect}>
+            <li>
+              <SneakerIcon className="icon-s"/>
+              - Тату в стиле реализм
+            </li>
+            <li>
+              <SneakerIcon className="icon-s"/>
+              - Кастом одежды и обуви
+            </li>
+            <li>
+              <SneakerIcon className="icon-s"/> 
+              - Реставрация аксессуаров
+            </li>
+            <li>
+              <SneakerIcon className="icon-s"/>
+              - Проектирование ландшафтного дизайна
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div>
             Тут будет текст от нелли про неё или чет тип такого, что она хочет
             написать Тут будет текст от нелли про неё или чет тип такого, что
             она хочет написать Тут будет текст от нелли про неё или чет тип
@@ -44,21 +68,6 @@ const AboutPage: React.FC = () => {
             нелли про неё или чет тип такого, что она хочет написать Тут будет
             текст от нелли про неё или чет тип такого, что она хочет написать
           </div>
-        </div>
-
-        <div className={styles.technics}>
-          Чем я занимаюсь:
-          <ul className={styles.technic_aspect}>
-            <li>
-              <SneakerIcon/>
-              - Тату в стиле реализм
-              </li>
-            <li>- Кастом одежды и обуви</li>
-            <li>- Реставрация аксессуаров</li>
-            <li>- Проектирование ландшафтного дизайна</li>
-          </ul>
-        </div>
-      </div>
     </div>
   );
 };
