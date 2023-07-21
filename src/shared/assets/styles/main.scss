@@ -11,3 +11,18 @@ body {
   width: 80%; // Это общий класснейм с заранее прописанными стилями. Эта ширина нужна для сайдбара.
   margin: 0 auto; // Это нужно для центрирования
 }
+
+.opacity-enter {
+  opacity: 0;
+}
+.opacity-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.opacity-exit {
+  opacity: 1;
+}
+.opacity-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}

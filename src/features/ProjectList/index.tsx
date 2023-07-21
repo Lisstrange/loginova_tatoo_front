@@ -1,12 +1,15 @@
-import React from "react";
+import React, { createRef } from "react";
 import type { Project } from "@/entities/projects/model/types";
 import { CategoryEnum } from "@/entities/projects/model/types";
 import ProjectListFilter from "./ProjectListFilter";
 import $api from "@/shared/config/http";
 import ProjectItem from "./ProjectItem";
 import styles from "./index.module.scss";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 interface IProjectListProps {}
+
+type ProjectAnimatedItem = Project & { nodeRef: any };
 
 const ProjectList: React.FC<IProjectListProps> = () => {
   const [posts, setPosts] = React.useState<Array<Project>>([]);
@@ -16,7 +19,9 @@ const ProjectList: React.FC<IProjectListProps> = () => {
 
   const [selectedCategoryName, setSelectedCategoryName] =
     React.useState<CategoryEnum>(CategoryEnum.All);
-  const [filtredPosts, setFiltredPosts] = React.useState<Project[]>(posts);
+  const [filtredPosts, setFiltredPosts] = React.useState<ProjectAnimatedItem[]>(
+    posts.map((item) => ({ ...item, nodeRef: createRef() }))
+  );
 
   React.useEffect(() => {
     $api
@@ -32,12 +37,18 @@ const ProjectList: React.FC<IProjectListProps> = () => {
   React.useEffect(() => {
     setFiltredPosts(() => {
       if (selectedCategoryName === CategoryEnum.All) {
-        return [...posts];
+        return [...posts] as ProjectAnimatedItem[];
       }
 
       return [
-        ...posts.filter((item) => item.category === selectedCategoryName),
-      ];
+        ...posts.filter((item) => {
+          if (item.category === selectedCategoryName)
+            return {
+              ...item,
+              nodeRef: createRef(),
+            };
+        }),
+      ] as ProjectAnimatedItem[];
     });
   }, [posts, selectedCategoryName]);
 
@@ -64,15 +75,18 @@ const ProjectList: React.FC<IProjectListProps> = () => {
           categories={categories}
         />
       </div>
-      <div className={styles.body}>
+      <TransitionGroup className={styles.body}>
         {filtredPosts.map((data) => (
-          <ProjectItem
+          <CSSTransition
             key={data.id}
-            data={data}
-            className={styles.projectItem}
-          />
+            nodeRef={data.nodeRef}
+            timeout={500}
+            classNames={"opacity"}
+          >
+            <ProjectItem key={data.id} data={data} />
+          </CSSTransition>
         ))}
-      </div>
+      </TransitionGroup>
     </div>
   );
 };
