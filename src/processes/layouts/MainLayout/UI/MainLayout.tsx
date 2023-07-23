@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 
 import Header from "@/widgets/Header";
 import { Sidebar } from "@/widgets/Sidebar";
+import Footer from "@/widgets/Footer";
 
 import styles from "./MainLayout.module.scss";
 
@@ -20,7 +21,9 @@ const MainLayout: React.FC<MainLayoutProps> = (className) => {
           <Outlet />
         </div>
       </main>
-      <footer>Footer</footer>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 };

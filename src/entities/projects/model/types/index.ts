@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 export enum CategoryEnum {
   All = "All",
   Design = "design",
@@ -19,4 +21,10 @@ export type Feedback = {
   title: string;
   text: string;
   author: string;
+};
+
+export type ReferalLink = {
+  id: number;
+  Icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  ref_link: string;
 };

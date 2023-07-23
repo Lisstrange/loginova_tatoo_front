@@ -92,11 +92,3 @@ const ProjectList: React.FC<IProjectListProps> = () => {
 };
 
 export default ProjectList;
-/* <div className={styles.body}>
-        {posts.map(({ id, category, descripton, photo, title }) => (
-          <div key={id} className={styles.post}>
-            {title}
-            <img src={photo} alt={title} />
-          </div>
-        ))}
-      </div> */

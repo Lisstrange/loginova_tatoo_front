@@ -1,0 +1,19 @@
+.footer_container {
+  padding-top: 15%;
+  width: 85%; // Эта ширина нужна, чтобы использовать всю ширину для футера и не мешать сайдбару.
+  margin: 0 auto; // Это нужно для центрирования
+}
+
+.footer {
+  float: right;
+  display: flex;
+  column-gap: 15px;
+}
+
+.icon {
+  border: 1px solid #9591c0;
+  border-radius: 10px;
+  padding: 5px;
+  height: 40px;
+  width: 40px;
+}
