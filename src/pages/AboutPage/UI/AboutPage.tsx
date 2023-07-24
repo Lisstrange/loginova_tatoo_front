@@ -4,6 +4,9 @@ import styles from "./AboutPage.module.scss";
 import { FileSlider } from "@/features/FileSlider";
 
 import SneakerIcon from "../icons/sneaker1.svg";
+import TatooIcon from "@/pages/AboutPage/icons/arm.svg"
+import ClothesIcon from "@/pages/AboutPage/icons/clothing.svg"
+import TreeIcon from "@/pages/AboutPage/icons/tree.svg"
 import UI from "@/shared/UI";
 
 const AboutPage: React.FC = () => {
@@ -11,6 +14,9 @@ const AboutPage: React.FC = () => {
 
   return (
     <div className="container">
+      <div>
+        А это страница "Обо мне"
+      </div>
       <div className={styles.main}>
         <div className={styles.slider}>
           <FileSlider />
@@ -19,7 +25,7 @@ const AboutPage: React.FC = () => {
           Чем я занимаюсь:
           <ul className={styles.techList}>
             <li className={styles.techItem}>
-              <SneakerIcon className={styles.icon} />
+              <TatooIcon className={styles.icon} />
               <p
                 onClick={() => setIsOpenFirstModal(true)}
                 className={styles.techItemText}
@@ -41,15 +47,12 @@ const AboutPage: React.FC = () => {
               <p className={styles.techItemText}>Кастом одежды и обуви</p>
             </li>
             <li className={styles.techItem}>
-              <SneakerIcon className={styles.icon} />
+              <ClothesIcon className={styles.icon} />
               <p className={styles.techItemText}>Реставрация аксессуаров</p>
             </li>
             <li className={styles.techItem}>
-              <SneakerIcon className={styles.icon} />
+              <TreeIcon className={styles.icon} />
               <p className={styles.techItemText}>
-                Проектирование ландшафтного дизайна Проектирование ландшафтного
-                дизайна Проектирование ландшафтного дизайна Проектирование
-                ландшафтного дизайна Проектирование ландшафтного дизайна
                 Проектирование ландшафтного дизайна
               </p>
             </li>

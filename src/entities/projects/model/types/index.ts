@@ -25,6 +25,6 @@ export type Feedback = {
 
 export type ReferalLink = {
   id: number;
-  Icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  Icon: React.FC<React.SVGProps<SVGSVGElement>>; // Мы тут прописываем именно такой тип, чтобы можно было присваивать className svg картинке
   ref_link: string;
 };

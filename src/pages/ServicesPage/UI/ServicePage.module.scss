@@ -1,0 +1,28 @@
+.headerText {
+    margin-top: 10px;
+    font: var(--font-l);
+}
+
+
+.serviceList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.serviceItem {
+    font: var(--font-l);
+    width: 50%;
+    flex-grow: 1;
+}
+
+ul {
+    font: var(--font-s)
+}
+
+
+.icon {
+    width: 10em;
+    height: 10em;
+
+}
