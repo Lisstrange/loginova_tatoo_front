@@ -15,14 +15,23 @@ $global-text: (
   --font-size-l: 20px,
   --font-line-l: 28px,
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font--family-main),
+  // --------- text-l ↴ ----------
+  --font-size-xl: 28px,
+  --font-line-xl: 36px,
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font--family-main),
   // --------- title-m ↴ ----------
   --font-size-title-m: 32px,
   --font-line-title-m: 40px,
   --font-title-m: var(--font-size-title-m) / var(--font-line-title-m)
     var(--font--family-main),
   // --------- title-l ↴ ----------
-  --font-size-title-l: 58px,
-  --font-line-title-l: 66px,
+  --font-size-title-l: 50px,
+  --font-line-title-l: 58px,
   --font-title-l: var(--font-size-title-l) / var(--font-line-title-l)
+    var(--font--family-main),
+  // --------- title-xl ↴ ----------
+  --font-size-title-xl: 68px,
+  --font-line-title-xl: 76px,
+  --font-title-xl: var(--font-size-title-xl) / var(--font-line-title-xl)
     var(--font--family-main),
 );

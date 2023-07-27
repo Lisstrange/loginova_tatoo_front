@@ -4,9 +4,9 @@ import styles from "./AboutPage.module.scss";
 import { FileSlider } from "@/features/FileSlider";
 
 import SneakerIcon from "../icons/sneaker1.svg";
-import TatooIcon from "@/pages/AboutPage/icons/arm.svg"
-import ClothesIcon from "@/pages/AboutPage/icons/clothing.svg"
-import TreeIcon from "@/pages/AboutPage/icons/tree.svg"
+import TatooIcon from "@/pages/AboutPage/icons/arm.svg";
+import ClothesIcon from "@/pages/AboutPage/icons/clothing.svg";
+import TreeIcon from "@/pages/AboutPage/icons/tree.svg";
 import UI from "@/shared/UI";
 
 const AboutPage: React.FC = () => {
@@ -14,9 +14,7 @@ const AboutPage: React.FC = () => {
 
   return (
     <div className="container">
-      <div>
-        А это страница "Обо мне"
-      </div>
+      <div className={styles.title}>А это страница обо мне</div>
       <div className={styles.main}>
         <div className={styles.slider}>
           <FileSlider />

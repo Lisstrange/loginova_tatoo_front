@@ -1,28 +1,33 @@
 .headerText {
-    margin-top: 10px;
-    font: var(--font-l);
+  margin-top: 10px;
+  font: var(--font-xl);
 }
 
-
 .serviceList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2em;
 }
 
 .serviceItem {
-    font: var(--font-l);
-    width: 50%;
-    flex-grow: 1;
+  font: var(--font-title-m);
+  width: 50%;
+  flex-grow: 1;
+  margin-top: 1em;
 }
 
 ul {
-    font: var(--font-s)
+  font: var(
+    --font-l
+  ); // TODO было бы круто сделать этот параметр зависимым от стиля font serviceItem
+  // чтобы он был font - 1. Тип на 1 размер меньше, чем класс выше
 }
 
+// li {
+//   font: var(--font-m);
+// }
 
 .icon {
-    width: 10em;
-    height: 10em;
-
+  width: 8em;
+  height: 8em;
 }
