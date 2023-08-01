@@ -7,6 +7,13 @@ export enum CategoryEnum {
   Branding = "branding",
 }
 
+export enum SocialNetworks {
+  Avito = "Avito",
+  Telegramm = "Telegramm",
+  Vk = "Vk",
+  Instagramm = "Instagramm",
+}
+
 export type Project = {
   id: number;
   photo: string;

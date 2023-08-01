@@ -8110,10 +8110,10 @@ graphemer@^1.4.0:
   resolved "https://registry.npmjs.org/graphemer/-/graphemer-1.4.0.tgz"
   integrity sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==
 
-gvegas-cfc@^0.0.22:
-  version "0.0.22"
-  resolved "https://registry.npmjs.org/gvegas-cfc/-/gvegas-cfc-0.0.22.tgz"
-  integrity sha512-kEW/7ABEjIuV4xWVpyarI67pblRYvvrrdPH1wQ2yPeP/agNpXhgJ7zF5ZPNtz30TkM5SvPR5Re7YC831vJgNag==
+gvegas-cfc@^0.0.23:
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/gvegas-cfc/-/gvegas-cfc-0.0.23.tgz#1c6feb2a803dd72eedbaa59eb14817378eedb7d8"
+  integrity sha512-1/Dg2f35julqma7lJMRGETUCRuQWjGpntDPRExT3mcUr1eEokpiKwzo3jbiVzt9Q7Xe2jOY6aOMfZQte6JgwIw==
   dependencies:
     chalk "^4.1.2"
     cli-alerts "^1.2.2"

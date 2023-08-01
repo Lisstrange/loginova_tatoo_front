@@ -16,16 +16,16 @@
   margin-top: 1em;
 }
 
-ul {
+.skillsList {
   font: var(
     --font-l
   ); // TODO было бы круто сделать этот параметр зависимым от стиля font serviceItem
   // чтобы он был font - 1. Тип на 1 размер меньше, чем класс выше
 }
 
-// li {
-//   font: var(--font-m);
-// }
+// // li {
+// //   font: var(--font-m);
+// // }
 
 .icon {
   width: 8em;
