@@ -30,11 +30,11 @@ const ContactsPage: React.FC = () => (
       Здесь вы можете задать свой вопрос и указать свою почту. Я отвечу вам,
       проанализировав вашу проблему в этом же письме.
     </div>
-    <div className={styles.baseciForm}>
+    <div className={styles.basicForm}>
       <form>
         <div className={styles.contactForm}>
           <div className={styles.contactItem}>
-            Имя
+            <div className={styles.tag}>Имя</div>
             <input
               className={styles.inputBtn}
               type="text"
@@ -43,26 +43,33 @@ const ContactsPage: React.FC = () => (
           </div>
 
           <div className={styles.contactItem}>
-            Ссылка на страницу
+            <div className={styles.tag}>Ссылка на страницу</div>
+
             <input
               className={styles.inputBtn}
               type="text"
-              placeholder="Ссылка на страницу для обратной связи"
+              placeholder="Для обратной связи"
             />
           </div>
         </div>
-        Область вопроса
+        <div className={styles.tag}>Область вопроса</div>
         <input
-          className={styles.inputBtn}
+          className={styles.inputBtnM}
           type="text"
           placeholder="По какой теме вопрос"
         />
-        Вопрос
-        <input
-          className={styles.inputBtn}
-          type="text"
-          placeholder="Твой вопрос"
-        />
+
+        <div className={styles.tag}>Вопрос</div>
+
+        <textarea className={styles.inputBtnL} placeholder="Твой вопрос" />
+
+        <div className={styles.submitBtn}>
+          <input
+            className={styles.inputBtnS}
+            type="submit"
+            value="Отправить Вопрос"
+          />
+        </div>
       </form>
     </div>
   </div>
