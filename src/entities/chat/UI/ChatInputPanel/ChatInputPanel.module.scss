@@ -1,16 +1,17 @@
-@import "../../variables";
-
-.TelegramChatInputPanel {
+@import "./variables";
+.ChatInputPanel {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   padding: 10px 40px;
 
   column-gap: 30px;
-  background-color: var(--translucent-bg-color-7);
+  background: url("../icons/telega_light_theme.jpg");
 }
 
 .textarea {
   @extend %TextareaTextStyles;
+  padding: 0.5em;
+  outline: 0.1px solid black;
 
   border-radius: 6px;
   min-height: 60px;
@@ -18,8 +19,9 @@
   overflow-y: auto;
   width: 85%;
   resize: none;
-  border: none;
   background-color: var(--translucent-bg-color-8);
+  cursor: text;
+  caret-color: black;
 
   &::-webkit-scrollbar {
     width: 0;

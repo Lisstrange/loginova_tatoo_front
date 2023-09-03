@@ -1,5 +1,5 @@
 import type { RuleSetRule } from "webpack";
-import { BuildOptions } from "./types/config";
+import type { BuildOptions } from "./types/config";
 import { buildCSSLoader } from "./loaders/buildCSSLoader";
 
 export function buildLoaders({ isDev }: BuildOptions): Array<RuleSetRule> {
@@ -16,35 +16,23 @@ export function buildLoaders({ isDev }: BuildOptions): Array<RuleSetRule> {
     use: ["@svgr/webpack"],
   };
 
-  const fileLoader: RuleSetRule = {
-    test: /\.(png|jpe?g|gif|woff2)$/i,
-    use: [
-      {
-        loader: "file-loader",
-      },
-    ],
-  };
-
-  const babelLoader: RuleSetRule = {
-    test: /\.(js|jsx|ts|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: "babel-loader",
-      // options: {
-      //   presets: ["@babel/preset-env"],
-      //   plugins: [
-      //     [
-      //       "i18next-extract",
-      //       {
-      //         nsSeparator: AppAlias.value,
-      //         locales: ["ru", "en"],
-      //         keyAsDefaultValue: true,
-      //       },
-      //     ],
-      //   ],
-      // },
+  const fontsLoader: RuleSetRule = {
+    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+    type: "asset/resource",
+    generator: {
+      publicPath: "/assets/fonts/",
+      outputPath: "assets/fonts/",
     },
   };
 
-  return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
+  const fileLoader: RuleSetRule = {
+    test: /\.(png|jpe?g|gif)$/i,
+    type: "asset/resource",
+    generator: {
+      publicPath: "/assets/images/",
+      outputPath: "assets/images/",
+    },
+  };
+
+  return [fileLoader, fontsLoader, svgLoader, typescriptLoader, cssLoader];
 }

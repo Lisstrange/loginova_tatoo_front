@@ -1,30 +1,18 @@
 import React from "react";
 
-import SendIcon from "./icons/send.svg";
-import SmilesIcon from "./icons/smiles.svg";
-import UploadFileIcon from "./icons/paperclip.svg";
+import SendIcon from "../icons/send.svg";
+// import SmilesIcon from "../icons/smiles.svg";
+import UploadFileIcon from "../icons/paperclip.svg";
 
-import styles from "./TelegramChatInputPanel.module.scss";
+import styles from "./ChatInputPanel.module.scss";
 
-export const TelegramChatInputPanel: React.FC = () => {
+export const ChatInputPanel: React.FC = () => {
   const txRef = React.useRef<HTMLTextAreaElement>(null);
   const [txValue, setTxValue] = React.useState<string>("");
 
   const onChangeTX = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
     setTxValue(e.target.value);
   };
-
-  // React.useEffect(() => {
-  //   const selectionStart = txRef.current?.selectionStart;
-  //   if (selectedEmoji !== "" || selectionStart) {
-  //     setTxValue((prevState) => {
-  //       const start = prevState.slice(0, selectionStart);
-  //       const end = prevState.slice(selectionStart);
-  //       return start + selectedEmoji + end;
-  //     });
-  //     setSelectedEmoji("");
-  //   }
-  // }, [selectedEmoji]);
 
   React.useLayoutEffect(() => {
     if (txRef.current) {
@@ -36,13 +24,13 @@ export const TelegramChatInputPanel: React.FC = () => {
   }, [txValue]);
 
   return (
-    <div className={styles.TelegramChatInputPanel}>
+    <div className={styles.ChatInputPanel}>
       <UploadFileIcon />
+
       <textarea
         className={styles.textarea}
         ref={txRef}
         onChange={onChangeTX}
-        value={txValue}
         onKeyDown={(e): void => {
           if (e.key === "Enter") {
             setTxValue((prevState) => {
@@ -53,7 +41,7 @@ export const TelegramChatInputPanel: React.FC = () => {
           }
         }}
       />
-      <SmilesIcon />
+      {/* <SmilesIcon /> */}
       <SendIcon />
     </div>
   );

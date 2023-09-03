@@ -1,12 +1,12 @@
 import React from "react";
 
 import styles from "./TelegramPage.module.scss";
-import { TelegramChatInputPanel } from "./components/TelegramChatInputPanel";
+import { ChatInputPanel } from "@/entities/chat";
 
 const TelegramPage: React.FC = () => (
   <div className="container">
     <div className={styles.wrapper}>
-      <TelegramChatInputPanel />
+      <ChatInputPanel />
     </div>
   </div>
 );
